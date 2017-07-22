@@ -65,12 +65,12 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
 <a href = '/' data-toggle="tooltip" title="Home Sweet Home">Home</a>
-<a href = '/about' data-toggle="tooltip" title="About Us">About</a>
+<a href = '/about' data-toggle="tooltip" title="About Us">Add Blog</a>
 <a href = '/contact' data-toggle="tooltip" title="Wanna Contact">Contact</a>
 <a href = '/restaurant' data-toggle="tooltip" title="Restaurants We Have">List</a>
 </div> </div>
 </div>
-<div class = 'container' style="font-size:30px;cursor:pointer; text-align: center" onclick="openNav()"><h1>&#9776; Blog</h1></div>
+<div class = 'container' style="font-size:30px;cursor:pointer; text-align: center" onclick="openNav()"><h1>&#9776; Blog</h1>{%  if  user.is_authenticated   %}<a  href="{%    url 'post_new'  %}" class="top-menu"><span  class="glyphicon    glyphicon-plus"></span></a></div>{% endif %}
 
 <script>
 function openNav() {
