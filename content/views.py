@@ -10,6 +10,13 @@ def post_list(request):
 	print(context)
 	return render(request, template_name, context)
 
+def post_user(request, slug):
+	template_name = 'post_list.html'
+	post = Post.objects.filter(author = slug).order_by('created_date')
+	context = {'Post' : post}
+	print(context)
+	return render(request, template_name, context)
+
 def post_new(request):
 	template_name = 'new.html'
 	if request.method == 'POST':
