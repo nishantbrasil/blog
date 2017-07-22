@@ -70,8 +70,8 @@ body {
 <a href = '/restaurant' data-toggle="tooltip" title="Restaurants We Have">List</a>
 </div> </div>
 </div>
-<div class = 'container' style="font-size:30px;cursor:pointer; text-align: center" onclick="openNav()"><h1>&#9776; Blog</h1></div><h2>{%  if  user.is_authenticated   %}<span>@{{user.username}}    </span><a  href="{%    url 'post_new'  %}" class="top-menu"><span  class="glyphicon    glyphicon-plus"></span></a>{% else %}<a href="#">Login</a>{% endif %}
-</h2>
+<div class = 'container' style="font-size:30px;cursor:pointer; text-align: center" onclick="openNav()"><h1>&#9776; Blog</h1></div><div><h2>{%  if  user.is_authenticated   %}<span>@{{user.username}}    </span><a  href="{%    url 'post_new'  %}" class="top-menu"><span  class="glyphicon    glyphicon-plus"></span></a><span><small><a href="{% url 'logout' %}">  Logout</a></small></span>{% else %}<a href="{% url 'login' %}">Login</a> | <a href="">Sign Up</a>{% endif %}
+</h2></div>
 <script>
 function openNav() {
     document.getElementById("myNav").style.height = "100%";

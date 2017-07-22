@@ -12,7 +12,7 @@ def post_list(request):
 
 def post_user(request, slug):
 	template_name = 'post_list.html'
-	post = Post.objects.filter(author = slug).order_by('created_date')
+	post = Post.objects.filter(author__iexact = slug).order_by('created_date')
 	context = {'Post' : post}
 	print(context)
 	return render(request, template_name, context)
